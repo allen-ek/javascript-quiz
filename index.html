@@ -6,38 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>HTML QUIZ</title>
-    <section class="timer">Timer</section>
 </head>
 
 <body>
-    <header>
+    <div class="container">
+    
+        <header id="strtpage">
         <h1>Multiple Choice JavaScript Quiz</h1>
         <h2>Quiz Info: If a question is answered wrong 5 seconds is subtracted from the timer. If time runs out the quiz ends</h2>
+        <button id ="strtbtn">Start Quiz</button>
+        <button id="startHiscore" onclick="displayHighscore()">Hi-Score</button> 
     </header>
+
+    <section id ="quiz">
+        <div id="timer">Time</div>
+        <div id="questions"><p></p></div>
+        <button id="A" onclick="checkAnswer('A')">A</button>
+        <button id="B" onclick="checkAnswer('B')">B</button>
+        <button id="C" onclick="checkAnswer('C')">C</button>
+        <div id="result"></div>
+    </section>
     
-    <div class="time">
-        <p>Time Remaining
-            <section id="timer"></section>
-        </p>
+    <section id="gameover">
+
+        <div id="finalScore"></div>
+        <input type="text" size = "50" placeholder="Enter initials" name="intial" id="initial"/>
+        <button id="submit">Submit</button>
+    </section>
+    
+    <div id=hiscoreContainer>
+        <div id="hi-scorePage">
+            <div id="hiscore-header">
+                <h2>Players</h2>
+                <h2>Score</h2>
+            </div>
+            <div id = "hiscore-initials"></div>
+            <div id = "hiscore-score"></div>
+        </div>
+        <div id="endGame">
+            <button id="playAgain" onclick="replay()">Replay</button>
+            <button id="clearHiscore" onclick="clearScore()">Clear Scores</button>
+        </div>
+    </div>
     </div>
     
     
-    <main>
-        <section class ="container">
-            <button class="next">
-                Next Question▶ 
-              </button>
-        </section>
-        
-    
-    
-    
-    </main>
-    
-    
-    
-    <footer>
+   
 
-    </footer>
     <script src="./assets/script.js"></script>
 </body>
+</html>
